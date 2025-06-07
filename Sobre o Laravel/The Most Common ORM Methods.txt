@@ -1,0 +1,57 @@
+Here are the most common ORM methods to deal with entities and their relationships:
+
+	1. Finding records:
+	   - User::find(id); -> returns an User instance equivalent to the given id number.
+	   - User::findOrFail(id); -> throws an exception if it wasn't founded.
+
+
+	2. Finding all the records:
+	   - User::all(); -> returns a collection with all the records in the table.
+
+
+	3. Fetching with condition:
+	   - User::where('name','pablo')->first(); -> returns only one record that matches the condition.
+	   - User::where('name','pablo')->get(); -> returns a collection of records that fits with the condition.
+	   We can also use:
+	   - User::where('age','>=',18)->get();
+
+
+	4. Filtering with performance:
+	   - User::whereIn('name',['Pedro','João','Carlos'])->get();
+	   - User::whereNotIn('age',[16,17,18]);
+
+
+	5. Creating new records:
+	   - $user = new User();
+	     $user->name = "Pablo";
+	     $user->age = 19;
+	     $user->email = "pabloguajardojr4@gmail.com"
+	     $user->save(); // update the database
+
+	   Or we can create (most commonly used) mass assignment:
+	    - User::create([
+		'name'  => 'pablo',
+		'age'   =>  19,
+		'email' =>  'pabloguajardojr4@gmail.com',
+	    ]);
+
+
+	6. Updating data:
+	   - $user = User::find(id);
+	     $user->name = "pablo";
+	     $user->save();
+
+	   We can also do this:
+	   - User::where('id',10)->update(['name'=>'mario']); //in this case, we don't need to use save().
+
+
+	7. Deleting records:
+	   - $user = User::find(1);
+	     $user->delete();
+
+	   Or deleting directly:
+	   - User::where('id','12')->delete();
+
+	   Or deleting all the records instead of only an instance:
+	   - User::truncate();
+	

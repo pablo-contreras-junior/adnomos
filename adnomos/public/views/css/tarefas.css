@@ -1,0 +1,131 @@
+.agenda-tarefas-container {
+    max-width: 100%;
+    margin: 2.5rem auto;
+    background: var(--color-white);
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 2.5rem 2rem;
+}
+
+.agenda-titulo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.agenda-tarefas-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.agenda-tarefa-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-light, #f5f6fa);
+    border-radius: 1rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    padding: 0.7rem 1.2rem;
+    margin-bottom: 1rem;
+    min-height: 64px;
+    transition: background 0.2s;
+    gap: 1.2rem;
+}
+
+.agenda-tarefa-card.concluida {
+    background: #e6ffe6;
+    opacity: 0.7;
+}
+
+.agenda-tarefa-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.agenda-tarefa-icone {
+    background: var(--color-primary, #3774ee);
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.agenda-tarefa-icone .material-icons-sharp {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.agenda-tarefa-textos {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.agenda-tarefa-titulo {
+    font-weight: 600;
+    color: var(--color-primary, #3774ee);
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
+}
+
+.agenda-tarefa-descricao {
+    color: var(--color-dark, #363949);
+    font-size: 0.93rem;
+    margin-bottom: 0.2rem;
+}
+
+.agenda-tarefa-data {
+    font-size: 0.85rem;
+    color: var(--color-info-dark, #888);
+    white-space: nowrap;
+}
+
+.agenda-btn-concluir {
+    background: var(--color-succcess, #41f1b6);
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.4rem 1.1rem;
+    font-size: 0.97rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.agenda-btn-concluir .material-icons-sharp {
+    font-size: 1.2rem;
+}
+
+.agenda-btn-concluir:hover {
+    background: var(--color-primary, #3774ee);
+}
+
+.agenda-tarefa-status {
+    color: var(--color-succcess, #41f1b6);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 1rem;
+}
+
+.agenda-sem-tarefas {
+    text-align: center;
+    color: var(--color-info-dark);
+    font-size: 1.1rem;
+    margin: 2rem 0;
+}

@@ -1,0 +1,21 @@
+The best way to display authenticated user screens, is by creating a dedicated Controller for this task.
+Example:
+
+	instead of...
+		Route::get('userHomePage',function(){
+	   	    $user = Auth::user();
+		    return view('auth.home',['user' => $user]);
+		})->middleware('auth');
+
+	We can do this:
+		class AuthUserController extends Controller {
+		    public function __construct(){
+			$this->middleware('auth');
+		    }
+
+		    public function showHome(){
+			$user = Auth::user();
+			return view('auth.home', compact('user'));
+		    }
+		    
+		}

@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #007bff; /* Fundo azul */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Remove a barra de rolagem do body */
+}
+
+.form-container {
+    background: #fff;
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3); /* Sombra mais visível */
+    padding: 40px;
+    max-width: 900px;
+    width: 100%;
+    overflow-y: auto; /* Apenas o contêiner terá barra de rolagem */
+    max-height: 90vh; /* Limita a altura do contêiner */
+}
+
+h1 {
+    color: #0056b3;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+h3 {
+    color: #0056b3;
+    margin-top: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input, .form-group textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* Bordas arredondadas nos campos */
+    font-size: 14px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #007bff; /* Destaque ao focar no campo */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7); /* Sombra ao focar */
+    outline: none;
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn.primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn.primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra ao passar o mouse */
+}
+
+.btn.primary:active {
+    transform: translateY(0); /* Remove o efeito ao clicar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra reduzida ao clicar */
+}
+
+/* Estilo para rolagem com bordas mais arredondadas e visual moderno */
+.form-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+    background-color: #0056b3; /* Cor mais escura para contraste */
+    border-radius: 20px; /* Bordas mais arredondadas */
+    border: 3px solid #e0e0e0; /* Espaço entre a barra e o track */
+}
+
+.form-container::-webkit-scrollbar-thumb:hover {
+    background-color: #003f7f; /* Cor ainda mais escura ao passar o mouse */
+}
+
+.form-container::-webkit-scrollbar-track {
+    background-color: #f4f4f4; /* Cor clara para contraste */
+    border-radius: 20px; /* Bordas arredondadas no track */
+}

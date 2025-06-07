@@ -1,0 +1,38 @@
+Model:
+   Representa uma tabela específica (ou um registro da tabela) de um banco de dados. como em Dog,
+   ou Funcionario.
+
+View:
+   Representa o medlo que exibe seus dados para o usuário final; como uma páagina de login com seu
+   determinado HTML, CSS e Javascript.
+
+Controller:
+   Como um guarda de trâsito; pega requisições HTTP do navegador, os dados correspondentes do
+   banco de dados e outros mecanismos, valida o input do usuário e, eventualmente, retorna os dados
+   para o usuário.
+
+
+Primeiro, o usuário interage com o Controller, mandando uma requisição HTTP via navegador. O Contr-
+oller em resposta, pode enviar ou buscar informações do Model (banco). Depois, o Controller provav-
+elmente vai enviar dados para View, que exibirá essas informações para o usuário.
+
+------------
+VERBOS HTTP:
+
+Os mais comuns verbos HTTP são GET e POST, seguidos por PUT e DELETE. Existem outros como HEAD,
+OPTIONS e PATCH, alem de outros dois que quase nunca são usados em projetos web comuns. São esses:
+TRACE e CONNECT. Aqui está um breve resumo:
+
+   GET    ——> Pede um recurso (ou uma lista de recursos)
+
+   HEAD   ——> Solicita apenas uma versão com cabeçalhos de uma resposta GET
+
+   POST   ——> Cria um recurso
+
+   PUT    ——> Sobrescreve um recurso
+
+   PATCH  ——> Modifica um recurso
+
+   DELETE ——> Deleta um recurso
+
+   OPTIONS ——> Pergunta para o servidor quais verbos são permitidos na URL

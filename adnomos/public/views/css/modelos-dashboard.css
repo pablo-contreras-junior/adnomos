@@ -1,0 +1,69 @@
+.modal-externo {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.modal-interno {
+    position: relative;
+    width: 80%;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    position: relative;
+    height: 60px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-titulo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 25px;
+    color: #2b39ff;
+    margin: 0;
+}
+
+#modal-fechar {
+    position: absolute;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 26px;
+    font-weight: bold;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#modal-fechar:hover {
+    color: #e74c3c;
+}
+
+#iframe-pdf {
+    flex-grow: 1;
+    width: 100%;
+    border: none;
+}
+
+.ativo {
+    display: flex;
+}

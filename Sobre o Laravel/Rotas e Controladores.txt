@@ -1,0 +1,66 @@
+O livro Laravel: Up & Running, começa com um exemplo introdutório, onde o autor cria uma rota HTTP
+e em seguida, nos apresenta algumas fromas de diponibilizar conteudo atravéz dela. Uma delas é uti-
+lizando Controllers:
+
+   1. Criando a Rota:
+         Para criar um rota, precisamos navegar até o arquivo localizado em 'Routes\web.php' e usar 
+         o método estático 'get()' para uma requisição http. Esse método leva dois parametros: a 
+         rota que será acessada pelo navegador (ex: '\index') e, um callable array que tem a estru-
+         tura: [MeuControladorEspecifico::class, 'metodoDesseControlador'] e serve para chamar mét-
+         odos.
+
+    2. Criando um Controller:
+         Dentro de 'App\Http\Controllers' existe um arquivo Controller.php. Este é, uma classe abs-
+         trata chamada de Controller, que deve ser extendida por qualquer Controller que queiramos 
+         criar. Para criar um, abrimos o terminal na pasta da aplicação e usamos o comando para 
+         criar controllers automaticamente 'php artisan make:controller NomeController'. Isso vai
+         criar um controller na pasta 'App\Http\Controllers' o qual terá seus proprios métodos e,
+         consequentemente, seus prorpios comportamentos.
+
+O livro também apresenta uma forma de disponibilizar conteudo mais direta, usando 'closure methods'
+ou 'métodos de encerramento' que são métodos anonimos do php, ao qual, possibilitam rapidas defini-
+ções de comportamento. Podendo ser passado como parametros de verbos HTTP, eles nos possibilitam
+definir uma resposta ao usuário:
+
+    Route::get('home',function(){
+       return view('home');
+    });
+
+Mais adiante, também nos é apresentada uma maneira de inserir parametros na url. Primeiro, explici-
+tamos qual parte da url será variável colocando-a entre {}, depois usamos uma closure function com
+seus determinados parametros, que representaram um comportamento para a rota especificada.
+[nota: o parâmetro da função não necessariamente precisa ter o mesmo nome do especificado na rota
+já que os parametros da rota serão considerados por ordem de precedencia em relação aos da função]
+
+    Route::get('user/{id}', function($id){
+       //
+    });
+
+Nos também podemos usar parametros opcionais nas rotas, incluindo uma interrogação (?) neles. Nesse
+caso, devemos definir um valor default para o parametro na função anonima:
+
+    Route::get('user/{id?}', function($id = '10'){
+       //
+    });
+
+Tambem podemos usar validação para cada parâmetro de rota definido. Para isso, usaremos método
+where() da classe Route, que representa uma condição. Esse método aceita valores parâmetro-validaç-
+ão ou um array associativo (caso haja mais de uma condição). Será usada uma expressão regular para
+a validação:
+
+
+    Route::get('user/{id}', function($id){
+       //
+    })->where('id','[0-9]');
+---------------------------------------------------------------
+
+    Route::get('user/{username}', function($username){
+       //
+    })->where('username','[A-Za-z]');
+---------------------------------------------------------------
+
+    Route::get('user/{id}/{username}', function($id,$username){
+       //
+    })->where(['id' => '[0-9]' , 'username' => '[A-Za-z]']);
+---------------------------------------------------------------
+

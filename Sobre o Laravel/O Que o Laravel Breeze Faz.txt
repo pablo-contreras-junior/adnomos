@@ -1,0 +1,29 @@
+O Laravel Breeze cria uma estrutura basica de autenticação, contendo as funcionalidades mais essenciais 
+que um sistema deve ter:
+
+1...Criação Automatica De Rotas:
+   O Laravel Breeze cria automaticamente, rotas para:
+
+      * login
+      * logout
+      * registro
+      * redefinição de senha
+      * verificação de email
+
+   Essas rotas já estão definidas no arquivo Routes\Web.php através de    __DIR__.'auth.php'    .
+    
+2...Controllers
+   O Breeze também cria Controllers para lidar com o sistema de autenticação, como login e registro. Esses
+   Controllers são mostrados arquivo de rotas.
+
+3...Views Automaticas
+   Além dessas funcionalides, o Laravel Breeze também gera Views simples e minimalistas para abrigar tais
+   funcionalidades. É possivel ediita-las.
+
+4...Middlewares
+   Também é provido Middlewares para proteger rotas que exigem verificação de email ou autenticação; 'auth' e
+   'verified' são alguns exemplos.
+
+
+   
+   

@@ -1,0 +1,51 @@
+Relationship in Laravel's ORM
+
+   ONE TO ONE: passport -> person
+
+   	class Person extends Model {
+	    public function passport(){
+	        return $this->hasOne(Passport::class);
+	    }
+	}
+
+	class Passaport extends Model {
+	    public function person(){
+	        return $this->belongsTo(Person::class);
+	    }
+	}
+
+----------------------------------------------------------
+
+   ONE TO MANY: client -> order
+
+	class Client extends Model {
+	    public function order(){
+	        return $this->hasMany(Order::class);
+	    }
+	}
+
+	class Order extends Model {
+	    public function client(){
+	        return $this->belongsTo(Client::class);
+	    }
+	}
+
+----------------------------------------------------------
+
+   MANY TO MANY: student -> course
+
+	class Student extends Model {
+	    public function courses(){
+	        return $this->belongsToMany(Course::class,'registrations','course_id','student_id');
+		// creates a 'registration' table with 'course_id' and 'student_id' columns
+	    }
+	}
+
+____________________________________________________________________________________________________________
+- In a One-To-Many (1:N) relationship, only the "many" side holds the foreign key referencing the "one" side.
+
+- In a One To One (1:1) relationship, either tables can hold a foreigner key from the other.
+
+- Many To Many (N:N) relationship between two objects, require an extra table. This table has the name of the relationship	
+(ex: the 'sells' table in a relationship 'salesman and client'), this intermediate table will have both client_id and salesman_id.
+   

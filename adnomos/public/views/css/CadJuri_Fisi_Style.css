@@ -1,0 +1,86 @@
+
+body{
+    background: linear-gradient(135deg, #007bff, #0056b3); /* cor do fundo da página */
+}
+
+*{
+    font-family: 'Arial', sans-serif;
+  }
+
+#caixaJ{
+    background-color: white;
+    height: 910px;
+    width: 600px;
+    border-radius: 10px; /* arredondamento da caixa */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* sombra da caixa */
+    animation: fadeIn 0.8s ease;
+}
+
+#caixaF{
+    background-color: white;
+    height: 1060px;
+    width: 600px;
+    border-radius: 10px; /* arredondamento da caixa */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* sombra da caixa */
+    animation: fadeIn 0.8s ease;
+}
+
+#desc{
+    color: grey;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.subtitle{
+    margin-left: 10%;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.campo{
+    padding: 15px; /* tamanho do campo */
+    width: 450px; /* largura do campo */
+    border: 1px solid #ddd;
+    border-radius: 5px; /* arredondamento da borda */
+    transition: border-color 0.3s, box-shadow 0.3s; /* transição para o efeito pós clique */
+}
+
+.campo:focus{ 
+    border-color: #007bff; /* cor da borda */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.btn{
+    background-color: #007bff; /* cor do botão */ 
+    color: white; /* cor do texto */ 
+    padding: 15px; /* tamanho do botão */ 
+    width: 280px; /* largura do botão */ 
+    border: none; /* retirada da borda */ 
+    border-radius: 10px; /* arredondamento do botão */ 
+    transition: background-color 0.3s, transform 0.2s; /* transição entre o normal e o hover */ 
+    font-size:medium; /*largura do texto */}
+
+    .btn:hover{
+        background-color: #0056b3; /* cor do hover */
+        transform: scale(1.05); /* o aumento do tamanho do botão */
+        transition: background-color 0.3s, transform 0.2s; /* transição entre o normal e o hover */
+    }
+
+#footer{
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+@keyframes fadeIn { /* animação de aparição */
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

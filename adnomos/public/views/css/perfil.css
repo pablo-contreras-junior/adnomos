@@ -1,0 +1,116 @@
+.perfil-container {
+    max-width: 100%;
+    margin: 2.5rem auto;
+    background: var(--color-white);
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 2.5rem 2rem 2rem 2rem;
+}
+
+.perfil-titulo {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--color-primary);
+    text-align: center;
+}
+
+.perfil-foto-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.perfil-foto-preview {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0;
+}
+
+.perfil-foto-preview img {
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    background: #f5f6fa;
+    border: 3px solid var(--color-light);
+    transition: box-shadow 0.2s;
+}
+
+.perfil-foto-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--color-primary);
+    color: #fff;
+    border-radius: 1.2rem;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    border: none;
+    outline: none;
+}
+
+.perfil-foto-label:hover {
+    background: #295dc6;
+}
+.perfil-foto-label input[type="file"] {
+    display: none;
+}
+
+.perfil-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.perfil-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.perfil-form-group label {
+    font-weight: 500;
+    color: var(--color-dark, #363949);
+}
+
+.perfil-form-group input {
+    padding: 0.7rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--color-light);
+    background: var(--color-light);
+    font-size: 1rem;
+    color: var(--color-dark);
+    transition: border 0.2s;
+}
+
+.perfil-form-group input:focus {
+    border: 1.5px solid var(--color-primary);
+    outline: none;
+}
+
+.perfil-btn-salvar {
+    background-color: var(--color-primary);
+    border-radius: 1rem;
+    color:white;
+    margin-top: 1.2rem;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 0.7rem 0;
+    transition: background 0.2s;
+}
+
+.perfil-btn-salvar:hover{
+    cursor: pointer;
+    background-color: rgb(0, 64, 255);
+}

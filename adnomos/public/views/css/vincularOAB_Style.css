@@ -1,0 +1,115 @@
+body{
+    background: linear-gradient(135deg, #007bff, #0056b3); /* cor do fundo da pagina */
+}
+
+
+ /* parte da caixa em si (para ser ultilizado para poup up) */
+
+*{
+    font-family: 'Arial', sans-serif;
+
+  }
+
+h2{
+    color: #007bff;
+}
+
+#caixa{
+    background-color: white; /*cor da caixa */
+    height: 675px; /* altura da caixa */
+    width: 500px; /* largura da caixa */
+    border-radius: 10px; /* arredondamento da caixa */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* sombra da caixa */
+    animation: fadeIn 0.8s ease;
+    
+    
+}
+
+.campo{
+    padding: 15px; /* tamanho do campo */
+    width: 400px; /* largura do campo */
+    border: 1px solid #ddd;
+    border-radius: 5px; /* arredondamento da borda */
+    transition: border-color 0.3s, box-shadow 0.3s; /* transição para o efeito pós clique */
+}
+
+.campo:focus{ 
+    border-color: #007bff; /* cor da borda */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+#txt{
+    margin-left: 8%; /* margemdo texto (esquerda) */
+    margin-right: 8%; /* margemdo texto (direita) */
+}
+
+#desc{
+    color: grey;
+}
+
+#selectBox{
+    background-color: white; /*cor da caixa de seleção */
+    padding: 10px;   /* tamanho da caixa */
+    border-radius: 5px; /* arredondamento da caixa */
+    border: 1px solid #ddd;
+    transition: border-color 0.3s, box-shadow 0.3s; /* transição para o efeito pós clique */
+}
+
+#selectBox:focus{
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+#btnSubmit{
+    background-color: #007bff; /* cor do botão */
+    color: white; /* cor do texto */
+    padding: 15px; /* tamano do botão */
+    width: 200px; /* largura do botão */
+    border: none; /* retirada da borda */
+    border-top-left-radius: 10px; /* arredondamento da borda (esquerda-cima) */
+    border-bottom-left-radius: 10px; /* arredondamento da borda (esquerda-baixo) */
+    font-size: medium; /* tamanho do texto */
+    transition: 0.2s; /* trasição entre o hover */
+    cursor: pointer; /* altera o cursor */
+}
+
+#btnSubmit:hover{
+    background-color: #0056b3; /* cor do hover */
+    transition: 0.2s; /* transição entre o normal  */
+}
+
+#btnSkip{
+    background-color: white; /* cor do botão */
+    padding: 15px; /* tamanho do botão */
+    width: 200px; /* largura do botão */
+    border: none; /* retirada da borda */
+    border-top-right-radius: 10px; /* arredondamento da borda (esquerda-cima) */
+    border-bottom-right-radius: 10px; /* arredondamento da borda (esquerda-baixo) */
+    font-size: medium; /* tamanho do texto */
+    transition: 0.2s; /* trasição entre o hover */
+    cursor: pointer; /*altera o cursos */
+    border: 1px solid #ddd;
+}
+
+#btnSkip:hover{
+    background-color: rgb(215, 215, 215); /* cor do hover */
+    transition: 0.2s; /* transição entre o normal  */
+}
+
+#footer{
+    font-size: 0.8rem;
+    color: #aaa;
+}
+
+@keyframes fadeIn { /* animação de aparição */
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

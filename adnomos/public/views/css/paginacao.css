@@ -1,0 +1,35 @@
+.paginacao-processos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.pagina-link {
+    padding: 8px 14px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-light);
+    border-radius: var(--border-radius-1);
+    color: var(--color-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.pagina-link:hover {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.pagina-link.ativo {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: bold;
+}
+
+.pagina-link.desativado {
+    background-color: var(--color-light);
+    color: var(--color-info-dark);
+    cursor: not-allowed;
+}
