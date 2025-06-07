@@ -171,56 +171,61 @@
 
                 <div class="sales-analytics">
                     <h2>Modelos de documentos</h2>
-                    <div class="item customers">
+
+                    <div 
+                        class="item customers abrir-modal-doc"
+                        data-doc="{{ asset('storage/modelos/peticao.pdf') }}"
+                        data-val="Petição Inicial"
+                    >
                         <div class="icon">
                             <span class="bx bxs-cloud-download"></span>
                         </div>
                         
                         <div class="right">
                             <div class="info">
-                                <button 
-                                    value ="Petição Inicial"
-                                    class="abrir-modal-doc" 
-                                    data-doc="{{ asset('storage/modelos/peticao.pdf') }}">
+                                <p>
                                     Petição Inicial
-                                </button>
+                                </p>
                             </div>
                             
                         </div>
                     </div>
 
-                    <div class="item customers">
+                    <div 
+                        class="item customers abrir-modal-doc"
+                        data-doc="{{ asset('storage/modelos/peticao.pdf') }}"
+                        data-val="Recursos"
+                    >
+
                         <div class="icon">
                             <span class="bx bxs-cloud-download"></span>
                         </div>
                         
                         <div class="right">
                             <div class="info">
-                                <button 
-                                    value ="Recursos"
-                                    class="abrir-modal-doc" 
-                                    data-doc="{{ asset('storage/modelos/peticao.pdf') }}">
+                                <p>
                                     Recursos
-                                </button>
+                                </p>
                             </div>
                             
                             
                         </div>
                     </div>
 
-                    <div class="item customers">
+                    <div 
+                        class="item customers abrir-modal-doc"
+                        data-doc="{{ asset('storage/modelos/peticao.pdf') }}"
+                        data-val="Agravos"
+                    >
                         <div class="icon">
                             <span class="bx bxs-cloud-download"></span>
                         </div>
                         
                         <div class="right">
                             <div class="info">
-                                <button 
-                                    value ="Agravos"
-                                    class="abrir-modal-doc" 
-                                    data-doc="{{ asset('storage/modelos/peticao.pdf') }}">
+                                <p>
                                     Agravos
-                                </button>
+                                </p>
                             </div>
                             
                         </div>
@@ -293,7 +298,7 @@
             btn.addEventListener('click', function() {
                 iframe.src = btn.getAttribute('data-doc');
                 modal.classList.add('ativo');
-                titulo.innerHTML = btn.value;
+                titulo.innerHTML = btn.getAttribute('data-val');
             });
         });
 

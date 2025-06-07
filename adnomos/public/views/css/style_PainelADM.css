@@ -489,7 +489,10 @@ main .recent-orders a{
 }
 
 .right .sales-analytics .item:hover{
+    cursor: pointer;
     box-shadow: none;
+    color:#dce1eb;
+    background: #3774ee;
 }
 
 .right .sales-analytics .item .right{
