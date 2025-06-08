@@ -65,7 +65,7 @@
                     <span class="material-icons-sharp">grid_view</span>
                     <h3>Home</h3>
                 </a>
-                <a href="{{ route('casos') }}" class="{{ request()->routeIs('casos')? 'active': '' }}">
+                <a href="{{ route('casos') }}" class="{{ request()->routeIs('casos') || request()->routeIs('casos.detalhes')? 'active': '' }}">
                     <span class="material-icons-sharp">receipt_long</span>
                     <h3>Casos</h3>
                 </a>             
@@ -204,7 +204,7 @@
                         <div class="right">
                             <div class="info">
                                 <p>
-                                    Recursos
+                                    Recurso
                                 </p>
                             </div>
                             
@@ -224,7 +224,7 @@
                         <div class="right">
                             <div class="info">
                                 <p>
-                                    Agravos
+                                    Agravo
                                 </p>
                             </div>
                             

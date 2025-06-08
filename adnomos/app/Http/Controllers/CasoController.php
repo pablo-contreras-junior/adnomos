@@ -21,7 +21,7 @@ class CasoController extends Controller
 
     public function mostrarDetalhes($idCaso){
         $caso = Caso::findOrFail($idCaso);
-        return view('auth.casos.caso-detalhes',compact('caso'));
+        return view('auth.caso-detalhes',compact('caso'));
     }
 
     public function buscarComAPI(){       
@@ -90,7 +90,7 @@ class CasoController extends Controller
 
     public function criarComentario(Request $request, $idCaso){
         Comentario::create([
-            'caso_id' => $request->caso_id,
+            'caso_id' => $idCaso,
             'titulo' => $request->titulo,
             'conteudo' => $request->conteudo,
         ]);

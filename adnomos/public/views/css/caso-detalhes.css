@@ -1,0 +1,300 @@
+/* Container principal */
+.processo-container {
+    max-width: 900px;
+    margin: 2.5rem auto;
+    background: var(--color-white, #fff);
+    border-radius: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 2.5rem 2rem;
+}
+
+/* Título principal */
+.processo-titulo {
+    font-size: 2.1rem;
+    font-weight: bold;
+    color: var(--color-primary, #1976d2);
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Box de informações */
+.info-box {
+    background: var(--color-light, #f5f6fa);
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 2.5rem 2rem;      
+    margin-bottom: 2rem;
+    max-width: 100%;           
+    font-size: 1.08rem;        
+}
+
+.info-box h5 {
+    color: var(--color-primary, #1976d2);
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Tags de status */
+.tag-dashboard {
+    background: #41f1b6;
+    color: #1a7f5a;
+    padding: 4px 12px;
+    border-radius: 1rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+.tag-dashboard.encerrado {
+    background: #ffb3b3;
+    color: #b23c3c;
+}
+
+/* Ações */
+.actions {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.actions .btn-dashboard {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    background: var(--color-primary, #1976d2);
+    color: #fff;
+    transition: background 0.2s;
+}
+.actions .btn-dashboard:hover {
+    background: var(--color-primary-variant, #1565c0);
+}
+.actions .btn-dashboard[style*="background: #ffc107"] {
+    background: #ffc107 !important;
+    color: #333 !important;
+}
+.actions .btn-dashboard[style*="background: #888"] {
+    background: #888 !important;
+    color: #fff !important;
+}
+
+/* Seções */
+.section-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--color-primary, #1976d2);
+}
+
+/* Comentários, prazos e arquivos */
+.agenda-tarefas-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.agenda-tarefa-card {
+    background: var(--color-light, #f5f6fa);
+    border-radius: 1.2rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    padding: 1.1rem 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+}
+.agenda-tarefa-info {
+    flex: 1;
+}
+.agenda-tarefa-textos {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.agenda-tarefa-titulo {
+    font-weight: bold;
+    color: var(--color-primary, #1976d2);
+    font-size: 1.05rem;
+}
+.agenda-tarefa-descricao {
+    color: #444;
+    font-size: 0.98rem;
+}
+.agenda-tarefa-data {
+    color: #888;
+    font-size: 0.93rem;
+}
+.agenda-sem-tarefas {
+    color: #888;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+/* Botão de download de arquivo */
+.file-list .btn-dashboard {
+    padding: 0.4rem 1.1rem;
+    font-size: 0.97rem;
+    background: var(--color-primary, #1976d2);
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+    transition: background 0.2s;
+}
+.file-list .btn-dashboard:hover {
+    background: var(--color-primary-variant, #1565c0);
+}
+
+/* Responsividade */
+@media (max-width: 700px) {
+    .processo-container {
+        padding: 1.2rem 0.5rem;
+    }
+    .agenda-tarefa-card {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .actions {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+}
+
+/* Modal externo */
+.modal-externo {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(30,32,38,0.65);
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+}
+.modal-externo.ativo,
+.modal-externo[style*="display: flex"],
+.modal-externo[style*="display: block"] {
+    display: flex !important;
+    animation: modalFadeIn 0.2s;
+}
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Modal interno */
+.modal-interno {
+    background: var(--color-white, #fff);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    width: auto;              /* ADAPTÁVEL */
+    min-width: 260px;         /* Limite mínimo */
+    max-width: 95vw;          /* Limite máximo responsivo */
+    max-height: 90vh;         /* Nunca ultrapassa a tela */
+    overflow: auto;           /* Rolagem se necessário */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    animation: modalShow 0.25s;
+}
+@keyframes modalShow {
+    from { transform: translateY(40px) scale(0.97); opacity: 0; }
+    to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Título do modal */
+.modal-titulo-dashboard {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    color: var(--color-primary, #1976d2);
+    letter-spacing: 1px;
+    font-family: inherit;
+}
+
+/* Botão de fechar */
+.modal-interno button[id^="close"] {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    background: var(--color-light, #f5f6fa);
+    border: none;
+    font-size: 2rem;
+    color: #b23c3c;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+.modal-interno button[id^="close"]:hover {
+    color: #fff;
+    background: #b23c3c;
+}
+
+/* Formulários dos modais */
+.modal-interno form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+.modal-interno .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.modal-interno label {
+    font-size: 1rem;
+    color: var(--color-primary, #1976d2);
+    font-weight: 500;
+}
+.modal-interno input[type="text"],
+.modal-interno input[type="file"],
+.modal-interno textarea {
+    border: 1px solid var(--color-light, #e0e0e0);
+    border-radius: 0.7rem;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    background: #fafafa;
+    color: #222;
+    outline: none;
+    transition: border 0.2s;
+}
+.modal-interno input[type="text"]:focus,
+.modal-interno textarea:focus {
+    border: 1.5px solid var(--color-primary, #1976d2);
+}
+.modal-interno textarea {
+    resize: vertical;
+    min-height: 70px;
+    max-height: 200px;
+}
+
+/* Botão de submit */
+.modal-interno .btn-dashboard {
+    background: var(--color-primary, #1976d2);
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.7rem 0;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+}
+.modal-interno .btn-dashboard:hover {
+    background: var(--color-primary-variant, #1565c0);
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+    .modal-interno {
+        padding: 1rem 0.5rem 1rem 0.5rem;
+        min-width: unset;
+        max-width: 99vw;
+    }
+}

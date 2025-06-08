@@ -1,0 +1,142 @@
+/* Modal externo exclusivo do caso */
+.modal-externo-caso {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(30,32,38,0.65);
+    justify-content: center;
+    align-items: center;
+    z-index: 1100;
+}
+.modal-externo-caso.ativo,
+.modal-externo-caso[style*="display: flex"],
+.modal-externo-caso[style*="display: block"] {
+    display: flex !important;
+    animation: modalFadeIn 0.2s;
+}
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Modal interno adaptável */
+.modal-interno-caso {
+    background: var(--color-white, #fff);
+    border-radius: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    width: auto;
+    min-width: 260px;
+    max-width: 95vw;
+    max-height: 90vh;
+    overflow: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    animation: modalShow 0.25s;
+}
+@keyframes modalShow {
+    from { transform: translateY(40px) scale(0.97); opacity: 0; }
+    to   { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Título do modal */
+.modal-titulo-dashboard {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    color: var(--color-primary, #1976d2);
+    letter-spacing: 1px;
+    font-family: inherit;
+}
+
+/* Botão de fechar */
+.modal-interno-caso button[id^="close"] {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    background: var(--color-light, #f5f6fa);
+    border: none;
+    font-size: 2rem;
+    color: #b23c3c;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+.modal-interno-caso button[id^="close"]:hover {
+    color: #fff;
+    background: #b23c3c;
+}
+
+/* Formulários dos modais */
+.modal-interno-caso form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+.modal-interno-caso .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+.modal-interno-caso label {
+    font-size: 1rem;
+    color: var(--color-primary, #1976d2);
+    font-weight: 500;
+}
+.modal-interno-caso input[type="text"],
+.modal-interno-caso input[type="file"],
+.modal-interno-caso input[type="date"],
+.modal-interno-caso textarea {
+    border: 1px solid var(--color-light, #e0e0e0);
+    border-radius: 0.7rem;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    background: #fafafa;
+    color: #222;
+    outline: none;
+    transition: border 0.2s;
+}
+.modal-interno-caso input[type="text"]:focus,
+.modal-interno-caso input[type="date"]:focus,
+.modal-interno-caso textarea:focus {
+    border: 1.5px solid var(--color-primary, #1976d2);
+}
+.modal-interno-caso textarea {
+    resize: vertical;
+    min-height: 70px;
+    max-height: 200px;
+}
+
+/* Botão de submit */
+.modal-interno-caso .btn-dashboard {
+    background: var(--color-primary, #1976d2);
+    color: #fff;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.7rem 0;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.2s;
+}
+.modal-interno-caso .btn-dashboard:hover {
+    background: var(--color-primary-variant, #1565c0);
+}
+
+/* Responsividade */
+@media (max-width: 500px) {
+    .modal-interno-caso {
+        padding: 1rem 0.5rem 1rem 0.5rem;
+        min-width: unset;
+        max-width: 99vw;
+    }
+}
