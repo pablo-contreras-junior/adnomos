@@ -1,8 +1,8 @@
 @extends('auth.layout.dashboard')
 
 @section('estilo')
-<link rel="stylesheet" href="{{ asset('views/css/caso-detalhes.css') }}">
-<link rel="stylesheet" href="{{ asset('views/css/caso-detalhes-modais.css') }}">
+    <link rel="stylesheet" href="{{ asset('views/css/caso-detalhes.css') }}">
+    <link rel="stylesheet" href="{{ asset('views/css/caso-detalhes-modais.css') }}">
 @endsection
 
 @section('content')
