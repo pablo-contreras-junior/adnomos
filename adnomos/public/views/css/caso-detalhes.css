@@ -27,6 +27,9 @@
     margin-bottom: 2rem;
     max-width: 100%;
     font-size: 1.08rem;
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
 }
 
 .info-box h5 {
@@ -37,6 +40,7 @@
 
 /* Tags de status */
 .tag-dashboard {
+    margin-left: auto;
     background: #41f1b6;
     color: #1a7f5a;
     padding: 4px 12px;
@@ -44,7 +48,9 @@
     font-size: 0.95rem;
     font-weight: 500;
 }
+
 .tag-dashboard.encerrado {
+    width:fit-content;
     background: #ffb3b3;
     color: #b23c3c;
 }
@@ -57,6 +63,7 @@
     flex-wrap: wrap;
 }
 .actions .btn-dashboard {
+    flex-grow: 1;
     font-size: 1rem;
     padding: 0.6rem 1.5rem;
     border-radius: 1rem;

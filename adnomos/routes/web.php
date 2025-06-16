@@ -56,6 +56,8 @@ Route::middleware('auth')->group(function(){
     Route::post('casos/upload/documento/{idCaso}',[CasoController::class,'upload'])->name('casos.upload');
     Route::post('casos/criar/comentario/{idCaso}',[CasoController::class,'criarComentario'])->name('casos.comentar');
     Route::post('caso/adicionar/prazo/{idCaso}',[CasoController::class,'addPrazo'])->name('casos.prazo');
+    Route::post('caso/finalizar/{idCaso}',[CasoController::class,'finalizar'])->name('caso.finalizar');
+    Route::post('caso/reabrir/{idCaso}',[CasoController::class,'reabrir'])->name('caso.reabrir');
 
     #notificações
     Route::get('notificacoes',[NotificationController::class,'index'])->name('notificacoes');

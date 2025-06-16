@@ -8,18 +8,18 @@
 @section('content')
 <div class="processo-container">
     <!-- Informações do Caso -->
-    <div class="info-box mb-4">
+    <div class="info-box">
+        @if($caso->encerrado)
+            <span class="tag-dashboard encerrado">Encerrado</span>
+        @else
+            <span class="tag-dashboard">Em andamento</span>
+        @endif
         <p><strong>Número do Processo:</strong> {{ $caso->numero_processo }}</p>
         <p><strong>Tribunal:</strong> {{ $caso->tribunal }}</p>
         <p><strong>Órgão Julgador:</strong> {{ $caso->orgaoJulgador }}</p>
         <p><strong>Assuntos:</strong> {{ $caso->assunto }}</p>
-        <p><strong>Situação:</strong>
-            @if($caso->encerrado)
-                <span class="tag-dashboard encerrado">Encerrado</span>
-            @else
-                <span class="tag-dashboard">Em andamento</span>
-            @endif
-        </p>
+            
+        
     </div>
 
     <!-- Ações -->
@@ -29,6 +29,18 @@
             {{ $caso->prazo ? 'Editar Prazo' : 'Adicionar Prazo' }}
         </button>
         <button class="btn-dashboard btn-arquivo" onclick="document.getElementById('arquivoModal').classList.add('ativo')">Adicionar Arquivo</button>
+
+        @if(!$caso->encerrado)
+        <form action="{{route('caso.finalizar', $caso->id)}}" method="POST">
+            @csrf
+            <button type="submit" class="btn-dashboard btn-finalizar">Finalizar</button>
+        </form>
+        @else
+            <form action="{{route('caso.reabrir', $caso->id)}}" method="POST">
+                @csrf
+                <button type="submit" class="btn-dashboard btn-reabrir">Abrir</button>
+            </form>
+        @endif
     </div>
 
     <!-- Comentários -->

@@ -10,6 +10,8 @@ class Caso extends Model
     
     protected $fillable = [
         'user_id',
+        'ultimo_visto',
+        'acessos',
         'polo_ativo',
         'assunto',
         'numero_processo',

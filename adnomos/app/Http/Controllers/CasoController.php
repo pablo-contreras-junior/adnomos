@@ -21,6 +21,12 @@ class CasoController extends Controller
 
     public function mostrarDetalhes($idCaso){
         $caso = Caso::findOrFail($idCaso);
+
+        Caso::where('ultimo_visto', true)->update(['ultimo_visto' => false]);
+        
+        $caso->acessos++;
+        $caso->ultimo_visto = true;
+        $caso->save();
         return view('auth.caso-detalhes',compact('caso'));
     }
 
@@ -127,5 +133,21 @@ class CasoController extends Controller
             'orgaoJulgador' => isset($orgaoJulgador) ? $orgaoJulgador : null,
         ]);
         return redirect()->route('casos');
+    }
+
+    public function finalizar(Request $request, $idCaso){
+        $caso = Caso::find($idCaso);
+        $caso->encerrado = true;
+        $caso->save();
+
+        return redirect()->route('casos.detalhes', $idCaso);
+    }
+
+    public function reabrir(Request $request, $idCaso){
+        $caso = Caso::find($idCaso);
+        $caso->encerrado = false;
+        $caso->save();
+
+        return redirect()->route('casos.detalhes', $idCaso);
     }
 }

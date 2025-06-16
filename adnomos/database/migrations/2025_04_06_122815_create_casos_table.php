@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('casos', function (Blueprint $table) {
             $table->id();
+            $table->integer('acessos')->default(1);
+            $table->boolean('ultimo_visto')->default(false);
             $table->string('assunto')->default('não informado');
             $table->string('polo_ativo')->default('não disponivel');
             $table->foreignId('user_id')->onDelete('cascade')->constrained();
