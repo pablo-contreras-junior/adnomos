@@ -366,12 +366,7 @@ main .recent-orders table {
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     text-align: center;
-    box-shadow: var(--box-sahdow);
     transition: all 300ms ease;
-}
-
-main .recent-orders table:hover{
-    box-shadow: none;
 }
 
 main table tbody td{
@@ -391,6 +386,9 @@ main .recent-orders a{
     color: var(--color-primary);
 }
 
+tr.last-seen > :nth-child(-n+3) {
+    color: var(--color-primary) !important;
+}
 
 /* ==================Right================ */
 .right{

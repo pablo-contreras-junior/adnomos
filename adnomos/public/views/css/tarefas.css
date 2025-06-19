@@ -1,10 +1,10 @@
 .agenda-tarefas-container {
     max-width: 100%;
-    margin: 2.5rem auto;
+    margin: 2rem auto;
     background: var(--color-white);
     border-radius: 1.5rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    padding: 2.5rem 2rem;
+    padding: 2rem 2.5rem;
 }
 
 .agenda-titulo {
@@ -121,11 +121,4 @@
     align-items: center;
     gap: 0.3rem;
     font-size: 1rem;
-}
-
-.agenda-sem-tarefas {
-    text-align: center;
-    color: var(--color-info-dark);
-    font-size: 1.1rem;
-    margin: 2rem 0;
 }

@@ -75,7 +75,7 @@
                   <!--------------- End Of Insights ------------ -->
            
                     <div class="recent-orders">
-                        <h3>Acessados Recentemente</h3>
+                        <h3>Acessados com Frequência</h3>
 
                             <input name="numero_processo" type="text" id="filtro" placeholder="Buscar numero do processo ou nome da" style="padding:17px; border-radius:10px; margin-bottom:20px;">
                             <button id="botao-filtro" type="submit">Buscar</button>
@@ -93,7 +93,7 @@
                             <tbody>   
                                 @foreach($casos->take(7) as $caso)
                                     @if(!empty($caso->id))
-                                        <tr>
+                                        <tr class="{{ $caso->ultimo_visto ? 'last-seen' : '' }}">
                                             <td>{{$caso->numero_processo}}</td>
                                             <td>{{$caso->polo_ativo}}</td>
                                             <td>{{$caso->tribunal}}</td>

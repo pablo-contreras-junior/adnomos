@@ -51,7 +51,6 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img  src="{{asset('views/images/logo(fundoBranco).png')}}" alt="">
                     <h2>Ad<span class="danger">Nomos</span></h2>
                 </div>
                

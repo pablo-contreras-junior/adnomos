@@ -35,7 +35,7 @@
             @endforeach
         </ul>
     @else
-        <div class="agenda-sem-tarefas">Nenhuma tarefa cadastrada.</div>
+        Nenhuma tarefa cadastrada.
     @endif
 </div>
 @endsection

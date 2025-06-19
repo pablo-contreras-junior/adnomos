@@ -13,7 +13,7 @@ class DashboardController extends Controller
         $nome = $partes[0];
 
         $user = Auth::user();
-        $casos = $user->casos()->get();
+        $casos = $user->casos()->get()->sortByDesc('acessos');
         $totalCasos = $casos->count();
         $numeroCasosEncerrados = $casos->filter(fn($caso)=>$caso->encerrado)->count();
         $numeroCasosAbertos = $casos->filter(fn($caso)=> !$caso->encerrado)->count();

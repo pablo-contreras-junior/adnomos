@@ -15,7 +15,7 @@ use App\Models\Documento;
 class CasoController extends Controller
 {
     public function index(){
-        $casos = Auth::user()->casos()->paginate(10);
+        $casos = Auth::user()->casos()->orderBy('acessos','desc')->paginate(10);
         return view('auth.casos.casos',compact('casos'));
     }
 
