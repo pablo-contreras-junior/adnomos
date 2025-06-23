@@ -121,7 +121,6 @@
                     <div class="profile">
                         <div class="info">
                             <p>Olá, <b>{{explode(' ',Auth::user()->name)[0]}}</b></p>
-                            <small class="text-muted">Admin</small>
                         </div>
                         <div class="profile-photo">
                             <img src="{{ Auth::user()->foto ? asset('storage/' . Auth::user()->foto) : asset('storage/images/user-default.png') }}">
@@ -169,7 +168,7 @@
                 <br><br>
 
                 <div class="sales-analytics">
-                    <h2>Modelos de documentos</h2>
+                    <h2>Modelos de Documentos</h2>
 
                     <div 
                         class="item customers abrir-modal-doc"
@@ -238,36 +237,6 @@
     </div>
     
     <script src="{{asset('views/js/script_painelADM.js')}}"></script>
-    <script src="{{asset('views/js/ordes_painelADM.js')}}"></script>
-
-    <script>
-
-        function calcularGrafico(circulo, comparativo, total){
-            const raio = parseFloat(circulo.getAttribute('r'));
-            const circunferencia = 2 * Math.PI * raio;
-
-            circulo.style.strokeDasharray = ${circunferencia};
-            if(total > 0){
-                circulo.style.strokeDashoffset = ${circunferencia * (1 - (comparativo / total))}; 
-            }else{
-                circulo.style.strokeDashoffset = 0;
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const circleAbertos = document.querySelector("main .insights .expenses svg circle");
-            const circleEncerrados = document.querySelector("main .insights .income svg circle");
-
-            const numCasosAbertos = {{Auth::user()->casos()->where('encerrado','==',true)->count()}};
-            const numCasosEncerrados = {{Auth::user()->casos()->where('encerrado','!=',true)->count()}};
-
-            const totalCasos = {{Auth::user()->casos()->count()}};
-
-            calcularGrafico(circleAbertos,numCasosAbertos,totalCasos);
-            calcularGrafico(circleEncerrados,numCasosEncerrados,totalCasos);
-        });
-
-    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

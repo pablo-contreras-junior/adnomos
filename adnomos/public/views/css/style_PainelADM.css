@@ -4,7 +4,7 @@
 :root {
     --color-primary: #3774ee;
     --color-danger: #4a81f0; /* ---------ALtera a cor do nome Adnomos da pagina dasboard ----------- */
-    --color-succcess: #41f1b6;
+    --color-succcess: #15e49f;
     --color-warning: #ffbb55;
     --color-white: #fff;
     --color-info-dark: #7d8da1;
@@ -65,6 +65,7 @@ body {
     font-size: 0.88rem;
     background: var(--color-background);
     user-select: none;
+    overflow-y: hidden;
     overflow-x: hidden;
     color: var(--color-dark)
     
@@ -73,7 +74,7 @@ body {
     display: grid;
     width: 96%;
     margin: 0 auto;
-    gap: 1.8rem;
+    gap: 1.2rem;
     grid-template-columns: 14rem auto 23rem;
 }
 
@@ -139,7 +140,7 @@ b {
 }
 
 .success {
-    color: var(--color-success);
+    color: var(--color-succcess);
 }
 
 .warning {
@@ -247,8 +248,17 @@ aside .sidebar .message-count {
 
 /* ------------MAIN------------ */
 main{
-    margin-top: 1.4rem;
+    padding: 0.5rem 0;
+    overflow-y: auto;
+    height: 100vh;
+    scrollbar-width: none;         
+    -ms-overflow-style: none;      
 }
+
+main::-webkit-scrollbar {
+  display: none;                 /
+}
+
 /* ------------Calendário------------ */
 
 
@@ -312,24 +322,25 @@ main .insights .progress{
     border-radius: 50%;
 }
 
-main .insights svg {
-
+main .insights .circle-round {
     width: 7rem;
     height: 7rem;
+    border-radius: 50%;
+    background: conic-gradient(#2e7df6 var(--percentage), #e6e6e6 0);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
 }
 
-main .insights svg circle{
-    fill: none;
-    stroke: var(--color-primary);
-    stroke-width: 14;
-    stroke-linecap: round ;
-    transform: translate(5px, 5px);
-}
-
-main .insights .sales svg circle {
-    stroke-dasharray: 0;
-    stroke-dashoffset: 0;
-
+main .insights .circle-round::before{
+    content: "";
+    width: 5rem;
+    height: 5rem;
+    background: var(--color-white);
+    border-radius: 50%;
+    position: absolute;
 }
 
 main .insights .progress .number{
@@ -392,7 +403,16 @@ tr.last-seen > :nth-child(-n+3) {
 
 /* ==================Right================ */
 .right{
-    margin-top: 1.4rem;
+    padding: 0.5rem 0;
+    overflow-y: auto;
+    height: auto;
+    max-height: 100vh; 
+    scrollbar-width: none;         
+    -ms-overflow-style: none;  
+}
+
+.right::-webkit-scrollbar {
+  display: none;                 
 }
 
 .right .top{
@@ -494,7 +514,6 @@ tr.last-seen > :nth-child(-n+3) {
 }
 
 .right .sales-analytics .item .right{
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -677,10 +696,6 @@ tr.last-seen > :nth-child(-n+3) {
         width: 4.4rem;
         position: absolute;
         left: 66%;
-    }
-
-    .right .profile .info {
-        display: none;
     }
 
     .right .top button{

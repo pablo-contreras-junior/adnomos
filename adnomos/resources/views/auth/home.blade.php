@@ -16,9 +16,8 @@
                         </div>
 
                         <div class="progress">
-                            <svg>
-                                <circle cx='38' cy='38' r='36'></circle>
-                            </svg>
+                            <div class="circle-round" style="--percentage: 100%;">
+                            </div>
                             <div class="number">
                                 <p></p>
                             </div>
@@ -37,9 +36,8 @@
                             </div>
     
                             <div class="progress">
-                                <svg>
-                                    <circle cx='38' cy='38' r='36'></circle>
-                                </svg>
+                                <div class="circle-round" style="--percentage: {{(($numeroCasosAbertos - $numeroCasosEncerrados) / $numeroCasosAbertos) * 100 . '%'}};">
+                                </div>
                                 <div class="number">
                                     <p></p>
                                 </div>
@@ -58,9 +56,8 @@
                             </div>
     
                             <div class="progress">
-                                <svg>
-                                    <circle cx='38' cy='38' r='36'></circle>
-                                </svg>
+                                <div class="circle-round" style="--percentage: {{($numeroCasosEncerrados / $numeroCasosAbertos) * 100 . '%'}};">
+                                </div>
                                 <div class="number">
                                     <p></p>
                                 </div>
@@ -76,9 +73,11 @@
            
                     <div class="recent-orders">
                         <h3>Acessados com Frequência</h3>
-
-                            <input name="numero_processo" type="text" id="filtro" placeholder="Buscar numero do processo ou nome da" style="padding:17px; border-radius:10px; margin-bottom:20px;">
+                        <form method="GET" action="{{route('dashboard')}}">
+                            @csrf
+                            <input name="busca" type="text" id="filtro" placeholder= "Numero do processo" style="padding:17px; border-radius:10px; margin-bottom:20px;" oninput="formatarNumeroProcesso(this)">
                             <button id="botao-filtro" type="submit">Buscar</button>
+                        </form>
 
                         <div>
                         <table>
@@ -97,8 +96,8 @@
                                             <td>{{$caso->numero_processo}}</td>
                                             <td>{{$caso->polo_ativo}}</td>
                                             <td>{{$caso->tribunal}}</td>
-                                            <td class="warning">Aberto</td>
-                                            <td class="primary"><a href="{{route('casos.detalhes', ['idCaso' => $caso->id])}}">Details</a></td>
+                                            <td class="{{$caso->encerrado ? 'warning' : 'success'}}">{{$caso->encerrado ? 'fechado' : 'aberto'}}</td>
+                                            <td class="primary"><a href="{{route('casos.detalhes', ['idCaso' => $caso->id])}}">Detalhes</a></td>
                                         </tr>
                                     @endif
                                 @endforeach
@@ -108,6 +107,21 @@
                     </div>
 @endsection
 
-@section('right-side')
-    
+@section('script')
+    <script>
+        function formatarNumeroProcesso(input) {
+            let v = input.value.replace(/\D/g, '').slice(0, 20);
+            let res = '';
+            if (v.length > 7) res += v.substr(0,7) + '-';
+            else res += v;
+            if (v.length > 7) {
+                res += v.substr(7,2);
+                if (v.length > 9) res += '.' + v.substr(9,4);
+                if (v.length > 13) res += '.' + v.substr(13,1);
+                if (v.length > 14) res += '.' + v.substr(14,2);
+                if (v.length > 16) res += '.' + v.substr(16,4);
+            }
+            input.value = res;
+        }
+    </script>
 @endsection
