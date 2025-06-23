@@ -72,7 +72,7 @@
                   <!--------------- End Of Insights ------------ -->
            
                     <div class="recent-orders">
-                        <h3>Acessados com Frequência</h3>
+                        <h3>Acessados frequentemente</h3>
                         <form method="GET" action="{{route('dashboard')}}">
                             @csrf
                             <input name="busca" type="text" id="filtro" placeholder= "Numero do processo" style="padding:17px; border-radius:10px; margin-bottom:20px;" oninput="formatarNumeroProcesso(this)">
@@ -85,7 +85,6 @@
                                 <tr>
                                     <th>Numero do Processo</th>
                                     <th>Polo Ativo</th>
-                                    <th>Tribunal</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -95,8 +94,7 @@
                                         <tr class="{{ $caso->ultimo_visto ? 'last-seen' : '' }}">
                                             <td>{{$caso->numero_processo}}</td>
                                             <td>{{$caso->polo_ativo}}</td>
-                                            <td>{{$caso->tribunal}}</td>
-                                            <td class="{{$caso->encerrado ? 'warning' : 'success'}}">{{$caso->encerrado ? 'fechado' : 'aberto'}}</td>
+                                            <td class="{{$caso->encerrado ? 'warning' : 'success'}}">{{$caso->encerrado ? 'Finalizado' : 'Em andamento'}}</td>
                                             <td class="primary"><a href="{{route('casos.detalhes', ['idCaso' => $caso->id])}}">Detalhes</a></td>
                                         </tr>
                                     @endif

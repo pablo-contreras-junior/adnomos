@@ -397,7 +397,7 @@ main .recent-orders a{
     color: var(--color-primary);
 }
 
-tr.last-seen > :nth-child(-n+3) {
+tr.last-seen > :nth-child(-n+2) {
     color: var(--color-primary) !important;
 }
 

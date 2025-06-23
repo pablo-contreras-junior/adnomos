@@ -10,7 +10,7 @@
     <!-- Informações do Caso -->
     <div class="info-box">
         @if($caso->encerrado)
-            <span class="tag-dashboard encerrado">Encerrado</span>
+            <span class="tag-dashboard encerrado">Finalizado</span>
         @else
             <span class="tag-dashboard">Em andamento</span>
         @endif

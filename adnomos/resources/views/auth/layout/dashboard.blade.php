@@ -168,7 +168,7 @@
                 <br><br>
 
                 <div class="sales-analytics">
-                    <h2>Modelos de Documentos</h2>
+                    <h2>Modelos</h2>
 
                     <div 
                         class="item customers abrir-modal-doc"
