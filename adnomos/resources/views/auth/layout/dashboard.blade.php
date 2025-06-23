@@ -152,7 +152,7 @@
                         @empty
                             <div class="update tarefa-card">
                                 <div class="message">
-                                    <p>Nenhuma tarefa semanal cadastrada.</p>
+                                    <p>Nenhuma tarefa cadastrada.</p>
                                 </div>
                             </div>
                         @endforelse

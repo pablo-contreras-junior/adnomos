@@ -487,7 +487,6 @@ tr.last-seen > :nth-child(-n+3) {
     display: grid;
     grid-template-columns: 2.6rem auto;
     gap: 1rem;
-    margin-bottom: 1rem;
 }
 
 /* =================   ANÁLISE DE VENDAS =========== */

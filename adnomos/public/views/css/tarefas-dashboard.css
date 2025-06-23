@@ -88,19 +88,17 @@
     background: var(--color-light, #f5f6fa);
     border-radius: 1rem;
     box-shadow: 0 1px 4px rgba(0,0,0,0.03);
-    padding: 0.7rem 1rem;
-    margin-bottom: 0.7rem;
+    padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
     gap: 0.7rem;
     min-height: 48px;
-    height: 74px; /* altura fixa menor */
-    max-height: 74px;
-    overflow: hidden;
+    height: auto;
+    max-height: auto;
+    
 }
 
 .tarefa-message {
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
