@@ -22,7 +22,7 @@
     --border-radius-2: 0.8rem;
     --border-radius-3: 1.2rem;
 
-    --card-padding: 1.8rem;
+    --card-padding: 1.5rem;
     --padding-1: 1.2rem;
 
     --box-shadow: 0 2rem 3rem var(--color-light);
@@ -305,6 +305,8 @@ main .insights > div .income span{
 }
 
 main .insights > div .middle {
+
+    min-height: 9rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -323,6 +325,7 @@ main .insights .progress{
 }
 
 main .insights .circle-round {
+    flex-shrink: 0;
     width: 7rem;
     height: 7rem;
     border-radius: 50%;
@@ -464,7 +467,7 @@ tr.last-seen > :nth-child(-n+2) {
 
 .right .recent-updates {
     margin-top: 1rem;
-
+    
 }
 
 .right .recent-updates h2{

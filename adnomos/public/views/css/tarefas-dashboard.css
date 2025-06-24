@@ -10,6 +10,17 @@
     justify-content: center;
 }
 
+.modal-tarefa-bg .modal-tarefa .btn-dashboard{
+    width:100%; 
+    padding: 0.3rem; 
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+
+
 .modal-tarefa-bg.active {
     display: flex;
 }
@@ -91,11 +102,18 @@
     padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
-    gap: 0.7rem;
+    gap: 1.5rem;
     min-height: 48px;
     height: auto;
     max-height: auto;
-    
+    margin-bottom: 0.8rem;
+}
+
+.empty{
+    background-color: var(--color-white);
+    padding: 0; margin: 0;
+    box-shadow: none;
+    min-height: auto;
 }
 
 .tarefa-message {

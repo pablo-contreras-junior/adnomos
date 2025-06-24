@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\Comentario;
 use App\Helpers\Datajud\EndpointFinder;
+use App\Jobs\BuscarProcessos;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Caso;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Documento;
+
 
 class CasoController extends Controller
 {
@@ -30,52 +32,21 @@ class CasoController extends Controller
         return view('auth.caso-detalhes',compact('caso'));
     }
 
-    public function buscarComAPI(){       
-        $OABPedacos = explode('/',Auth::user()->oab);
-        $userOAB = $OABPedacos[0];
-        $uf = $OABPedacos[1];
+    public function buscarComAPI()
+    {
+        $oabPedacos = explode('/', Auth::user()->oab);
+        $userOAB    = $oabPedacos[0];
+        $uf         = $oabPedacos[1];
+        $userId     = Auth::id();
 
-        $url = config('services.escavador.base_url').'api/v2/advogado/processos?oab_numero='.$userOAB.'&oab_estado='.$uf;
-        $key = config('services.escavador.key');
-        do{    
-            $response = Http::withoutVerifying()->withHeaders([
-                'Authorization' => 'Bearer '. $key,
-                'X-Requested-With' => 'XMLHttpRequest',
-            ])->get($url);
-            
-            $jsonAPIResponse = $response->json();
-            $this->salvar($jsonAPIResponse);
+    
+        BuscarProcessos::dispatch($userId, $userOAB, $uf);
 
-            $url = $jsonAPIResponse['links']['next'] ?? null;
-        }while(isset($url));
-
-        return redirect()->route('dashboard');
+        return redirect()
+            ->route('dashboard')
+            ->with('status', 'Importação iniciada! Aguarde alguns instantes.');
     }
 
-    public function salvar($arrayDados){
-        $items = $arrayDados['items'];
-        
-        $registros = [];
-        $userId = Auth::id();
-
-        foreach($items as $item){
-            $assunto = $item['fontes'][0]['capa']['assunto_principal_normalizado']['nome'] ?? null;
-            $polo_ativo = $item['titulo_polo_ativo'] ?? null;
-            $status = $item['fontes'][0]['status_predito'] ?? null;
-
-            $registros[] = [
-                'user_id'=> $userId,
-                'assunto' => isset($assunto) ? $assunto : 'Não Disponível',
-                'numero_processo' => $item['numero_cnj'],
-                'polo_ativo' => isset($polo_ativo) ? $polo_ativo : 'Não Disponível',
-                'tribunal' => $item['unidade_origem']['tribunal_sigla'],
-            ];
-        }
-
-        foreach(array_chunk($registros,100) as $lote){
-            DB::table('casos')->insert($lote);
-        }
-    }
 
     public function upload(Request $request, $idCaso){
         $caso = Caso::findOrFail($idCaso);

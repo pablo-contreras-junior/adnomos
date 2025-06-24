@@ -31,7 +31,7 @@
                     <label for="descricao-tarefa">Descrição</label>
                     <textarea id="descricao-tarefa" name="conteudo" rows="3" required></textarea>
                 </div>
-                <button type="submit" class="btn-dashboard" style="width:100%;">Salvar Tarefa</button>
+                <button type="submit" class="btn-dashboard">Salvar Tarefa</button>
             </form>
         </div>
     </div>
@@ -150,7 +150,7 @@
                                 </div>
                             </div>
                         @empty
-                            <div class="update tarefa-card">
+                            <div class="tarefa-card empty">
                                 <div class="message">
                                     <p>Nenhuma tarefa cadastrada.</p>
                                 </div>

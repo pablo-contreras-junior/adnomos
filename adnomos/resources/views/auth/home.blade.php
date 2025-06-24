@@ -35,9 +35,7 @@
                                 <h1>{{$numeroCasosAbertos}}</h1>
                             </div>
     
-                            <div class="progress">
-                                <div class="circle-round" style="--percentage: {{(($numeroCasosAbertos - $numeroCasosEncerrados) / $numeroCasosAbertos) * 100 . '%'}};">
-                                </div>
+                            <div class="circle-round" style="--percentage: {{ $numeroCasosAbertos > 0 ? ((($numeroCasosAbertos - $numeroCasosEncerrados) / $numeroCasosAbertos) * 100): 0 }}%">
                                 <div class="number">
                                     <p></p>
                                 </div>
@@ -55,9 +53,8 @@
                                 <h1>{{$numeroCasosEncerrados}}</h1>
                             </div>
     
-                            <div class="progress">
-                                <div class="circle-round" style="--percentage: {{($numeroCasosEncerrados / $numeroCasosAbertos) * 100 . '%'}};">
-                                </div>
+                            <div class="circle-round" style="--percentage: {{ $numeroCasosAbertos > 0 ? ($numeroCasosEncerrados / $numeroCasosAbertos * 100) : 0 }}%;">
+                                            
                                 <div class="number">
                                     <p></p>
                                 </div>
@@ -65,8 +62,8 @@
                         </div>
     
                         <small class="text-muted"></small>
-                </div>
-                 <!--------------- End Of Icome ------------ -->
+                </div
+                 <!-- End Of Icome -------------->
 
             </div>
                   <!--------------- End Of Insights ------------ -->
