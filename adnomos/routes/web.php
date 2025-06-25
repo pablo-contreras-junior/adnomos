@@ -15,6 +15,7 @@ use App\Console\Commands\VerificarPrazos;
 use App\Http\Controllers\CalendarioController;
 use App\Http\Controllers\PerfilController;
 use App\Http\Controllers\TarefaController;
+use App\Http\Controllers\UserController;
 
 # Rotas Publicas
 Route::get('/', function () {
@@ -40,6 +41,9 @@ Route::post('cadastro/juridica/finish',[CadastroController::class,'stepTwoPostJu
 
 #Rotas Protegidas
 Route::middleware('auth')->group(function(){
+
+    #userk
+    Route::post('usuario/tema',[UserController::class,'changeTheme'])->name('usuario.tema');
 
     #dashboard
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');

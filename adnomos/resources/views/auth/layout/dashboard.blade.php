@@ -36,7 +36,7 @@
         </div>
     </div>
 
-<body>
+<body class="{{ Auth::user()->prefer_dark ? 'dark-theme-variables' : '' }}">
     <div class="modal-externo" id="modalDocumento">
         <div class="modal-interno">
             <div class="top">
@@ -113,10 +113,14 @@
                             </span>
                     </button>
 
-                    <div class="theme-toggler">
-                        <span class="material-icons-sharp active">light_mode</span>
-                        <span class="material-icons-sharp">dark_mode</span>
-                    </div>
+                    <form id="theme-form" action="{{ route('usuario.tema') }}" method="POST" style="display:inline;">
+                        @csrf
+                        <input type="hidden" name="prefer_dark" id="input-tema" value="{{ Auth::user()->prefer_dark ? '1' : '0' }}">
+                        <div class="theme-toggler" onclick="toggleTheme()">
+                            <span class="material-icons-sharp {{ !Auth::user()->prefer_dark ? 'active' : '' }}">light_mode</span>
+                            <span class="material-icons-sharp {{ Auth::user()->prefer_dark ? 'active' : '' }}">dark_mode</span>
+                        </div>
+                    </form>
 
                     <div class="profile">
                         <div class="info">
@@ -237,6 +241,14 @@
     </div>
     
     <script src="{{asset('views/js/script_painelADM.js')}}"></script>
+
+    <script>
+        function toggleTheme() {
+            const input = document.getElementById('input-tema');
+            input.value = input.value === '1' ? '0' : '1';
+            document.getElementById('theme-form').submit();
+        }
+    </script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

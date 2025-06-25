@@ -136,8 +136,8 @@ body {
     
   }
 }
-
-#gtco-main-nav::after {
+/* É esse */
+#gtco-main-nav::after { 
   position: absolute;
   content: "";
   height: 600px;
@@ -288,7 +288,7 @@ body {
   max-width: 430px;
   margin: 0 auto;
   margin-top: 30px;
-  margin-right: 0;
+  margin-right: auto;
 }
 @media (max-width: 1400px) {
   .gtco-banner-area .col-md-6 .card .card-img-top {
@@ -377,6 +377,8 @@ body {
 .gtco-features .col-lg-8 .row .col:first-child {
   margin-top: 150px;
 }
+
+
 @media (max-width: 600px) {
   .gtco-features .col-lg-8 .row .col:first-child {
     margin-top: 50px;
@@ -662,6 +664,7 @@ body {
 }
 .gtco-logo-area .col .img-fluid {
   max-height: 32px;
+  
 }
 @media (max-width: 600px) {
   .gtco-logo-area .col {

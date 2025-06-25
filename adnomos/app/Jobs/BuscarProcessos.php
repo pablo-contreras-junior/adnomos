@@ -18,14 +18,17 @@ class BuscarProcessos implements ShouldQueue
     protected string $userOAB;
     protected string $uf;
 
-    public function __construct(int $userId, string $userOAB, string $uf)
-    {
-        $this->userId  = $userId;
+    public function __construct(
+        $userId,
+        $userOAB,
+        $uf,
+    ) {
+        $this->userId = $userId;
         $this->userOAB = $userOAB;
-        $this->uf      = $uf;
+        $this->uf = $uf;
     }
 
-    public function handle(): void
+     public function handle(): void
     {
         $url = config('services.escavador.base_url')
              . 'api/v2/advogado/processos?oab_numero='
@@ -49,24 +52,30 @@ class BuscarProcessos implements ShouldQueue
 
     private function salvar(array $arrayDados): void
     {
-        $items   = $arrayDados['items'];
+        $items   = $arrayDados['items'] ?? [];
         $now     = now();
         $records = [];
 
         foreach ($items as $item) {
+            $statusPredito = $item['fontes'][0]['status_predito'] ?? null;
+            $encerrado     = strtoupper((string) $statusPredito) === 'INATIVO';
+
             $records[] = [
                 'user_id'         => $this->userId,
                 'assunto'         => $item['fontes'][0]['capa']['assunto_principal_normalizado']['nome'] ?? 'Não Disponível',
                 'numero_processo' => $item['numero_cnj'],
                 'polo_ativo'      => $item['titulo_polo_ativo'] ?? 'Não Disponível',
-                'tribunal'        => $item['unidade_origem']['tribunal_sigla'],
+                'tribunal'        => $item['unidade_origem']['tribunal_sigla'] ?? 'Desconhecido',
+                'encerrado'       => $encerrado,
                 'created_at'      => $now,
                 'updated_at'      => $now,
             ];
         }
 
+        $numeros = array_column($records, 'numero_processo');
+
         $existing = DB::table('casos')
-            ->whereIn('numero_processo', array_column($records, 'numero_processo'))
+            ->whereIn('numero_processo', $numeros)
             ->pluck('numero_processo')
             ->toArray();
 

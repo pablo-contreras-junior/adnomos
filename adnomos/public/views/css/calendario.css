@@ -1,15 +1,16 @@
 #calendar {
     max-width: 900px;
     margin: 2rem auto;
-    background: #fff;
+    background: var(--color-white);
     border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    box-shadow: 0 2px 8px var(--color-light);
     padding: 1.5rem;
     min-height: 600px;
+    color: var(--color-dark);
 }
 
 .fc-toolbar-title {
-    color: #3774ee;
+    color: var(--color-primary);
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
@@ -17,8 +18,8 @@
 }
 
 .fc-button {
-    background: #3774ee;
-    color: #a1cdff;
+    background: var(--color-primary);
+    color: var(--color-white);
     border: none;
     border-radius: 0.7rem;
     font-weight: 500;
@@ -27,34 +28,20 @@
     transition: background 0.2s;
 }
 .fc-button:hover, .fc-button:focus {
-    background: #295dc6;
+    background: var(--color-primary-variant);
 }
 
 .fc-daygrid-day.fc-day-today {
-    background: #62b6ff; /* azul bem claro, quase branco */
+    background: var(--color-light);
     border: none;
 }
 
 .fc-event {
-    background: #3774ee;
-    color: #fff;
+    background: var(--color-primary);
+    color: var(--color-white);
     border-radius: 0.5rem;
     border: none;
     padding: 2px 6px;
     font-size: 0.95rem;
     font-weight: 500;
-}
-
-.fc-toolbar-chunk {
-    flex: 1 1 0;
-    display: flex;
-    align-items: center;
-}
-.fc-toolbar-chunk:nth-child(2) {
-    justify-content: center;
-}
-.fc-toolbar-title {
-    width: 100%;
-    text-align: center;
-    margin: 0 auto;
 }

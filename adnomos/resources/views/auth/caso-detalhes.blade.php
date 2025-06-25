@@ -9,16 +9,15 @@
 <div class="processo-container">
     <!-- Informações do Caso -->
     <div class="info-box">
+        <p><strong>Número do Processo:</strong> {{ $caso->numero_processo }}</p>
+        <p><strong>Tribunal:</strong> {{ $caso->tribunal }}</p>
+        <p><strong>Órgão Julgador:</strong> {{ $caso->orgaoJulgador }}</p>
+        <p><strong>Assuntos:</strong> {{ $caso->assunto }}</p>
         @if($caso->encerrado)
             <span class="tag-dashboard encerrado">Finalizado</span>
         @else
             <span class="tag-dashboard">Em andamento</span>
         @endif
-        <p><strong>Número do Processo:</strong> {{ $caso->numero_processo }}</p>
-        <p><strong>Tribunal:</strong> {{ $caso->tribunal }}</p>
-        <p><strong>Órgão Julgador:</strong> {{ $caso->orgaoJulgador }}</p>
-        <p><strong>Assuntos:</strong> {{ $caso->assunto }}</p>
-            
         
     </div>
 

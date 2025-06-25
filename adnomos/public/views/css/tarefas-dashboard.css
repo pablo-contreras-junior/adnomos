@@ -96,7 +96,7 @@
 }
 
 .tarefa-card {
-    background: var(--color-light, #f5f6fa);
+    background: var(--color-light);
     border-radius: 1rem;
     box-shadow: 0 1px 4px rgba(0,0,0,0.03);
     padding: 0.5rem 1rem;

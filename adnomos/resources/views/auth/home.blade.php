@@ -6,7 +6,6 @@
             </div>
 
             <div class="insights">
-
                 <div class="sales">
                     <span class="material-icons-sharp">analytics</span>
                     <div class="middle">
@@ -62,11 +61,9 @@
                         </div>
     
                         <small class="text-muted"></small>
-                </div
-                 <!-- End Of Icome -------------->
-
+                </div>
             </div>
-                  <!--------------- End Of Insights ------------ -->
+                  
            
                     <div class="recent-orders">
                         <h3>Acessados frequentemente</h3>

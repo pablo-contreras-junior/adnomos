@@ -58,7 +58,7 @@
                     <a href="#">Começe Grátis <i class="fa fa-angle-right" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-md-61">
-                    <div class="card"><img class="card-img-top img-fluid" src="{{asset('views/images/banner-img.png')}}" alt=""></div>
+                    <div class="card"><img id= "banner" class="card-img-top img-fluid" src="{{asset('views/images/banner-img.png')}}" alt=""></div>
                 </div>
             </div>
         </div>

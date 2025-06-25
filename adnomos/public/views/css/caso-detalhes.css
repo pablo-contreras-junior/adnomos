@@ -40,10 +40,11 @@
 
 /* Tags de status */
 .tag-dashboard {
-    margin-left: auto;
+    margin-top: 1rem;
+    margin-right: auto;
     background: #41f1b6;
     color: #1a7f5a;
-    padding: 4px 12px;
+    padding: 4px 12px ;
     border-radius: 1rem;
     font-size: 0.95rem;
     font-weight: 500;
@@ -123,10 +124,11 @@
     font-size: 1.05rem;
 }
 .agenda-tarefa-descricao {
-    color: #444;
+    color: var(--color-dark);
     font-size: 0.98rem;
 }
 .agenda-tarefa-data {
+    text-align: end;
     color: #888;
     font-size: 0.93rem;
 }
