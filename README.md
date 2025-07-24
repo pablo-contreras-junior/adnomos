@@ -28,7 +28,8 @@ Além disso, o sistema depende de uma API paga para algumas funcionalidades.
 ## Pré-requisitos
 
 Antes de iniciar, é preciso ter instalado:
-• PHP 8.0 ou superior, para garantir compatibilidade com as últimas funcionalidades do Laravel.
-• Composer, o gerenciador de dependências do PHP, que irá baixar todas as bibliotecas necessárias.
-• MySQL, que será usado como banco de dados relacional.
-• Um servidor web (Apache ou Nginx) ou o servidor embutido do Laravel para servir a aplicação.
+
+- PHP 8.0 ou superior, para garantir compatibilidade com as últimas funcionalidades do Laravel.
+- Composer, o gerenciador de dependências do PHP, que irá baixar todas as bibliotecas necessárias.
+- MySQL, que será usado como banco de dados relacional.
+- Um servidor web (Apache ou Nginx) ou o servidor embutido do Laravel para servir a aplicação.
