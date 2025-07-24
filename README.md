@@ -39,39 +39,55 @@ Antes de iniciar, é preciso ter instalado:
 
 ### Passos
 
-1 - Clone o repositório e entre na pasta do projeto
-git clone <URL-do-repositório>
-cd <nome-da-pasta-do-projeto>
+### 1 - Clone o repositório e entre na pasta do projeto
 
-2 - Instale as dependências PHP com o Composer
+ git clone <URL-do-repositório>
+ 
+ cd <nome-da-pasta-do-projeto>
+
+### 2 - Instale as dependências PHP com o Composer
+
 composer install
 
-3 - Copie o arquivo de exemplo de ambiente
-cp .env.example .env
+### 3 - Copie o arquivo de exemplo de ambiente
+
+ cp .env.example .env
 
 4 - Abra o arquivo .env e ajuste as variáveis conforme sua máquina, por exemplo:
 
 DB_DATABASE=adnomos_database
+
 DB_USERNAME=seu_usuario
+
 DB_PASSWORD=sua_senha
+
 ...
+
 MAIL_MAILER=smtp
+
 MAIL_HOST=smtp.gmail.com
+
 MAIL_PORT=465
+
 MAIL_USERNAME=“seu-email@gmail.com”
+
 MAIL_PASSWORD=“sua-senha-de-app”
-MAIL_ENCRYPTION=ssl
+
 MAIL_FROM_ADDRESS=“seu-email@gmail.com”
+
 MAIL_FROM_NAME=“${APP_NAME}”
 
 ESCAVADOR_API_KEY=SUACHAVEAPI
 ESCAVADOR_BASE_URL=https://api.escavador.com/
 
-5 - Gere a chave de aplicação
+### 5 - Gere a chave de aplicação
+
 php artisan key:generate
 
-6 - Inicie o servidor e as filas em desenvolvimento
+### 6 - Inicie o servidor e as filas em desenvolvimento
+
 composer dev
 
-Acesse o sistema no navegador
+### Acesse o sistema no navegador
+
 http://localhost:8000
