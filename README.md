@@ -42,8 +42,7 @@ Antes de iniciar, é preciso ter instalado:
 ### 1 - Clone o repositório e entre na pasta do projeto
 
  git clone <URL-do-repositório>
- 
- cd <nome-da-pasta-do-projeto>
+ cd  <pasta-do-projeto>
 
 ### 2 - Instale as dependências PHP com o Composer
 
@@ -53,28 +52,20 @@ composer install
 
  cp .env.example .env
 
-4 - Abra o arquivo .env e ajuste as variáveis conforme sua máquina, por exemplo:
+### 4 - Abra o arquivo .env e ajuste as variáveis conforme sua máquina, por exemplo:
 
 DB_DATABASE=adnomos_database
-
 DB_USERNAME=seu_usuario
-
 DB_PASSWORD=sua_senha
 
 ...
 
 MAIL_MAILER=smtp
-
 MAIL_HOST=smtp.gmail.com
-
 MAIL_PORT=465
-
 MAIL_USERNAME=“seu-email@gmail.com”
-
 MAIL_PASSWORD=“sua-senha-de-app”
-
 MAIL_FROM_ADDRESS=“seu-email@gmail.com”
-
 MAIL_FROM_NAME=“${APP_NAME}”
 
 ESCAVADOR_API_KEY=SUACHAVEAPI
