@@ -1,4 +1,0 @@
-Views (visão) são as interfaces graficas de um site. Tais interfaces devem ser entregues ao usuario
-quando ele fizer uma requisição HTTP. Para exemplificar melhor, suponhamos que um usuário deseje
-acessar a tela de login de uma aplicação; ele deverá especificar uma rota (requisição) no navegador
-e então, será redirecionado para uma View.
